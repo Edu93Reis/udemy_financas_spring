@@ -38,7 +38,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 			throw new ErroAutenticacaoException("Usuário não cadastrado!");
 		}
 		
-		if(!user.get().getSenha().equals("senha")) {
+		if(!user.get().getSenha().equals(senha)) {
 			throw new ErroAutenticacaoException("Senha inválida!");
 		}
 		
