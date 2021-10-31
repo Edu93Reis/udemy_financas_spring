@@ -21,7 +21,7 @@ import com.springudemy.minhasfinancas.model.enums.StatusLancamento;
 import com.springudemy.minhasfinancas.model.enums.TipoLancamento;
 
 @Entity
-@Table(name = "lancamento", schema="financas")
+//@Table(name = "lancamento", schema="financas")
 public class Lancamento {
 
 	@Id
@@ -58,6 +58,10 @@ public class Lancamento {
 	@Enumerated(value = EnumType.STRING)
 	private StatusLancamento status;
 
+	public Lancamento() {
+		super();
+	}
+	
 	public Lancamento(Long id, String descricaoLancamento, Integer mes, Integer ano, Usuario usuario, BigDecimal valor,
 			LocalDate dataCadastro, TipoLancamento tipo, StatusLancamento status) {
 		super();
@@ -66,6 +70,18 @@ public class Lancamento {
 		this.mes = mes;
 		this.ano = ano;
 		this.usuario = usuario;
+		this.valor = valor;
+		this.dataCadastro = dataCadastro;
+		this.tipo = tipo;
+		this.status = status;
+	}
+	
+	public Lancamento(String descricaoLancamento, Integer mes, Integer ano, BigDecimal valor,
+			LocalDate dataCadastro, TipoLancamento tipo, StatusLancamento status) {
+		super();
+		this.descricaoLancamento = descricaoLancamento;
+		this.mes = mes;
+		this.ano = ano;
 		this.valor = valor;
 		this.dataCadastro = dataCadastro;
 		this.tipo = tipo;

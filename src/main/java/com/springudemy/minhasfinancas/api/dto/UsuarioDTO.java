@@ -6,6 +6,10 @@ public class UsuarioDTO {
 	private String nome;
 	private String senha;
 	
+	public UsuarioDTO() {
+		super();
+	}
+	
 	public UsuarioDTO(String email, String nome, String senha) {
 		super();
 		this.email = email;
